@@ -9,21 +9,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
         android:weightSum="1">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
         </androidx.recyclerview.widget.RecyclerView>
 
         <TextView
             android:layout_width="match_parent"
-            android:id="@+id/textError"
+            android:id="@+id/textMessage"
+            android:text="Загрузка..."
             android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+            android:gravity="center"/>
 
     </LinearLayout>
 

@@ -43,6 +43,7 @@ public class FilmActivity extends AppCompatActivity {
             }
         });
         fetchFilmDescriptionTask.execute();
+        binding.filmRating.setText(String.valueOf(film.getRatingKinopoisk()));
         binding.filmGenre.setText(genres);
         binding.filmCountry.setText(countries);
         binding.filmName.setText(film.getName());

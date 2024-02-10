@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textError = findViewById(R.id.textError);
+        TextView textMessage = findViewById(R.id.textMessage);
 
         RecyclerView Recycler = findViewById(R.id.recycler);
         recyclerAdapter = new RecyclerAdapter(this, data);
@@ -40,10 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
         new FetchFilmsTask(new FetchFilmsTask.OnFilmsFetchedListener() {
             @Override
-            public void onFilmsFetched(List<Film> films) {
+            public void onFilmsFetched(List<Film> films){
                 if (films.isEmpty()) {
-                    textError.setText("Ошибка при загрузке фильмов");
+                    textMessage.setText("Ошибка при загрузке фильмов");
                 } else {
+                    textMessage.setText(null);
                     data.addAll(films);
                     recyclerAdapter.notifyDataSetChanged();
                 }

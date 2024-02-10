@@ -18,7 +18,7 @@ import okhttp3.Response;
 
 public class FetchFilmsTask extends AsyncTask<Void, Void, List<Film>> {
 
-    private static final String API_URL = "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_ALL&page=1";
+    private static final String API_URL = "https://kinopoiskapiunofficial.tech/api/v2.2/films/collections?type=TOP_POPULAR_MOVIES&page=1";
     private static final String API_KEY = "e30ffed0-76ab-4dd6-b41f-4c9da2b2735b";
     private static final String TAG = "FetchFilmsTask";
     private final OnFilmsFetchedListener listener;

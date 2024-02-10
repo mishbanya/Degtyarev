@@ -84,9 +84,7 @@ public class Film implements Serializable{
         this.genres = genres;
     }
 
-    public Double getRatingKinopoisk() {
-        return ratingKinopoisk;
-    }
+    public double getRatingKinopoisk(){ return  this.ratingKinopoisk;}
 
     public void setRatingKinopoisk(Double ratingKinopoisk) {
         this.ratingKinopoisk = ratingKinopoisk;
