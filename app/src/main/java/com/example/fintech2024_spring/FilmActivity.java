@@ -3,12 +3,14 @@ package com.example.fintech2024_spring;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.view.View;
 import android.widget.ImageView;
 
 import com.example.fintech2024_spring.databinding.ActivityFilmBinding;
 import com.squareup.picasso.Picasso;
 
-public class FilmActivity extends AppCompatActivity{
+public class FilmActivity extends AppCompatActivity implements View.OnClickListener{
     private ActivityFilmBinding binding;
     Film film;
     String description=null;
@@ -49,8 +51,17 @@ public class FilmActivity extends AppCompatActivity{
         binding.filmGenre.setText(genres);
         binding.filmCountry.setText(countries);
         binding.filmName.setText(film.getName());
+        binding.backButton.setOnClickListener(this);
         binding.filmYear.setText(String.valueOf(film.getYear()));
         Picasso.get().load(film.getPosterUrl()).into(filmCover);
     }
 
+    @Override
+    public void onClick(View v) {
+        if(v == binding.backButton){
+            Intent intent = new Intent(FilmActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 }
