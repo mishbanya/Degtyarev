@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import com.example.fintech2024_spring.databinding.ActivityFilmBinding;
 import com.squareup.picasso.Picasso;
 
-public class FilmActivity extends AppCompatActivity {
+public class FilmActivity extends AppCompatActivity{
     private ActivityFilmBinding binding;
     Film film;
     String description=null;
@@ -43,12 +43,14 @@ public class FilmActivity extends AppCompatActivity {
             }
         });
         fetchFilmDescriptionTask.execute();
-        binding.filmRating.setText(String.valueOf(film.getRatingKinopoisk()));
+        if(film.getRatingKinopoisk() != -1) {
+            binding.filmRating.setText(String.valueOf(film.getRatingKinopoisk()));
+        }else {binding.filmRating.setText(String.valueOf("Отсутствует"));}
         binding.filmGenre.setText(genres);
         binding.filmCountry.setText(countries);
         binding.filmName.setText(film.getName());
         binding.filmYear.setText(String.valueOf(film.getYear()));
         Picasso.get().load(film.getPosterUrl()).into(filmCover);
-
     }
+
 }

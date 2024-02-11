@@ -21,6 +21,7 @@ public class Film implements Serializable{
     public Film() {
         this.name = "A film";
         this.year = 2000;
+        this.ratingKinopoisk = -1.0;
     }
 
     public Film(String name, int year) {

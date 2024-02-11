@@ -9,17 +9,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:context=".FilmActivity">
-        <FrameLayout
+        <ImageView
+            android:id="@+id/filmCover"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/filmCover"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:cropToPadding="true"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"/>
-        </FrameLayout>
+            android:layout_height="wrap_content"
+            android:cropToPadding="true"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
         <TextView
             android:id="@+id/filmName"
             android:layout_width="match_parent"
